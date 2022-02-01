@@ -1,0 +1,30 @@
+{
+    "name": "apuntapistola-api-rest",
+    "version": "1.0.0",
+    "description": "API-REST Project from HLC",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fco-veragua/apuntapistola-API-REST.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/fco-veragua/apuntapistola-API-REST/issues"
+    },
+    "homepage": "https://github.com/fco-veragua/apuntapistola-API-REST#readme",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^15.0.0",
+        "express": "^4.17.2",
+        "mongoose": "^6.1.10"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    }
+}
