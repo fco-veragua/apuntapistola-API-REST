@@ -6,7 +6,7 @@ const controller = require("./controllers.js");
 const router = express.Router();
 
 
-// --------------- API REST CRUD // - armas y armaduras
+// --------------- API REST CRUD // - armas y tiradores
 
 router.get("/armas", cors(), controller.readArmas); // Read All
 router.get("/armas/:id", cors(), controller.readArma); // Read

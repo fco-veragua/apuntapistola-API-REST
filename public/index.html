@@ -5,210 +5,152 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <title>apuntapistola API-REST</title>
 
-    <link rel="icon" type="image/png" href="/favicon.png">
-
-    <style>
-        @import url("https://fonts.googleapis.com/css?family=Aclonica");
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            font-family: "Aclonica";
-        }
-        
-        a {
-            text-decoration: none;
-        }
-        
-        h1,
-        div,
-        img,
-        p {
-            padding: 10px;
-        }
-        
-        div {
-            padding-left: 30px;
-        }
-        
-        .bloque {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .metodo {
-            margin: 0 0 15px;
-            border: 1px solid #000;
-            border-radius: 4px;
-            box-shadow: 0 0 3px rgba(0, 0, 0, .19);
-        }
-        
-        .get {
-            border-color: #61affe;
-            background: rgba(97, 175, 254, .1);
-        }
-        
-        .post {
-            border-color: #49cc90;
-            background: rgba(73, 204, 144, .1);
-        }
-        
-        .delete {
-            border-color: #f93e3e;
-            background: rgba(249, 62, 62, .1);
-        }
-        
-        .update {
-            border-color: #fca130;
-            background: rgba(252, 161, 48, .1);
-        }
-        
-        .http-get {
-            background: #61affe;
-        }
-        
-        .http-post {
-            background: #49cc90;
-        }
-        
-        .http-delete {
-            background: #f93e3e;
-        }
-        
-        .http-update {
-            background: #fca130;
-        }
-        
-        .resumen {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            padding: 5px;
-        }
-        
-        .cabecera {
-            display: flex;
-            align-items: center;
-            padding: 1px;
-            background: #fdebc9;
-            ;
-        }
-        
-        .metodo-verbo {
-            font-size: 14px;
-            font-weight: 700;
-            min-width: 80px;
-            padding: 6px 15px;
-            text-align: center;
-            border-radius: 3px;
-            text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
-            font-family: sans-serif;
-            color: #fff;
-        }
-        
-        .metodo-ruta {
-            display: flex;
-            align-items: center;
-            word-break: break-word;
-            padding: 0 10px 0 10px;
-            font-family: monospace;
-            font-weight: 600;
-            color: #3b4151;
-        }
-        
-        .metodo-descripcion {
-            padding-top: 10px;
-            font-size: 13px;
-            flex: 1 1 auto;
-            word-break: break-word;
-            font-family: sans-serif;
-            color: #3b4151;
-        }
-        
-        h4 {
-            border-bottom: 5px rgb(102, 100, 99);
-            margin-bottom: 5px;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="cabecera">
-        <img src="/favicon.png">
-        <h1>Tienda Backend</h1>
-    </div>
-    <p><small>Frontend en <a href="https://tiendafrontend.now.sh/">https://tiendafrontend.now.sh</a></small></p>
+    <!-- header -->
 
-    <p><b>API RESTful</b></p>
+    <header class="color sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark backc-nav">
+            <div class="container">
+                <img src="img/revolver.png" width="100px" alt="" class="ms-4">
+                <a class="navbar-brand" href="#"><strong>APUNTAPISTOLA</strong> API-REST</a>
 
-    <div class="bloque">
-        <h4>ARTÍCULOS</h4>
-        <div class="resumen metodo get">
-            <span class="metodo-verbo http-get">GET</span>
-            <span class="metodo-ruta">/api/articulos</span>
-            <span class="metodo-descripcion">Obtener todos los artículos.</span>
-        </div>
-        <div class="resumen metodo post">
-            <span class="metodo-verbo http-post">POST</span>
-            <span class="metodo-ruta">/api/articulos</span>
-            <span class="metodo-descripcion">Añadir un artículo.</span>
-        </div>
-        <div class="resumen metodo get">
-            <span class="metodo-verbo http-get">GET</span>
-            <span class="metodo-ruta">/api/articulos/{id}</span>
-            <span class="metodo-descripcion">Obtener un artículo.</span>
-        </div>
-        <div class="resumen metodo update">
-            <span class="metodo-verbo http-update">UPDATE</span>
-            <span class="metodo-ruta">/api/articulos/{id}</span>
-            <span class="metodo-descripcion">Modificar un artículo.</span>
-        </div>
-        <div class="resumen metodo delete">
-            <span class="metodo-verbo http-delete">DELETE</span>
-            <span class="metodo-ruta">/api/articulos/{id}</span>
-            <span class="metodo-descripcion">Eliminar un artículo.</span>
-        </div>
-    </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                    <ul class="navbar-nav">
 
-    <div class="bloque">
-        <h4>CLIENTES</h4>
-        <div class="resumen metodo get">
-            <span class="metodo-verbo http-get">GET</span>
-            <span class="metodo-ruta">/api/clientes</span>
-            <span class="metodo-descripcion">Obtener todos los clientes.</span>
+                        <!-- Home está activo -->
+                        <li><a class="nav-link active" href="index.html" id="navbarDarkDropdownMenuLink" role="button"
+                                aria-expanded="false">
+                                Home
+                            </a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Others
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Frontend</a></li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://github.com/fco-veragua/apuntapistola-API-REST.git">Código
+                                        Fuente</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
+    </header>
+
+    <!-- header / -->
+
+    <!-- main -->
+    <main role="main">
+
+        <div class="container color-container">
+            <div class="row armas">
+                <h1>ARMAS</h1>
+                <div class="col-12 m-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="#" class="btn btn-primary">GET</a><strong> /api/armas</strong> Obtener todas las
+                            armas
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 m-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="#" class="btn btn-success">POST</a><strong> /api/armas</strong> Añadir un arma
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 m-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="#" class="btn btn-primary">GET</a><strong> /api/armas/{id}</strong> Obtener un arma
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 m-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="#" class="btn btn-warning">UPDATE</a><strong> /api/armas/{id}</strong> Modificar un
+                            arma
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 m-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="#" class="btn btn-danger">DELETE</a><strong> /api/armas/{id}</strong> Eliminar un
+                            arma
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row armas">
+                <h1>TIRADORES</h1>
+                <div class="col-12 m-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="#" class="btn btn-primary">GET</a><strong> /api/tiradores</strong> Obtener todos
+                            los tiradores
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 m-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="#" class="btn btn-success">POST</a><strong> /api/tiradores</strong> Añadir un
+                            tirador
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 m-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="#" class="btn btn-primary">GET</a><strong> /api/tiradores/{id}</strong> Obtener un
+                            tirador
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 m-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="#" class="btn btn-warning">UPDATE</a><strong> /api/tiradores/{id}</strong>
+                            Modificar un tirador
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 m-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="#" class="btn btn-danger">DELETE</a><strong> /api/tiradores/{id}</strong> Eliminar
+                            un tirador
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="resumen metodo post">
-            <span class="metodo-verbo http-post">POST</span>
-            <span class="metodo-ruta">/api/clientes</span>
-            <span class="metodo-descripcion">Añadir un cliente.</span>
-        </div>
-        <div class="resumen metodo get">
-            <span class="metodo-verbo http-get">GET</span>
-            <span class="metodo-ruta">/api/clientes/{id}</span>
-            <span class="metodo-descripcion">Obtener un cliente.</span>
-        </div>
-        <div class="resumen metodo update">
-            <span class="metodo-verbo http-update">UPDATE</span>
-            <span class="metodo-ruta">/api/clientes/{id}</span>
-            <span class="metodo-descripcion">Modificar un cliente.</span>
-        </div>
-        <div class="resumen metodo delete">
-            <span class="metodo-verbo http-delete">DELETE</span>
-            <span class="metodo-ruta">/api/clientes/{id}</span>
-            <span class="metodo-descripcion">Eliminar un cliente.</span>
-        </div>
-    </div>
-    <p>
-        <small>
-            <b>Código fuente en
-                <a href="https://github.com/jamj2000/tiendabackend">https://github.com/jamj2000/tiendabackend</a>
-            </b>
-        </small>
-    </p>
+    </main>
+    <!-- main / -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>

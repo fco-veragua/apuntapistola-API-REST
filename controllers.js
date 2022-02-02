@@ -4,28 +4,28 @@ const { Arma, Tirador } = require("./models.js");
 // ------- ARMAS
 
 exports.readArmas = (req, res) =>
-    Cliente.find({}, (err, data) => {
+    Arma.find({}, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
 
 
 exports.readArma = (req, res) =>
-    Cliente.findOne({ _id: req.params.id }, (err, data) => {
+    Arma.findOne({ _id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
 
 
 exports.deleteArma = (req, res) =>
-    Cliente.findOneAndRemove({ _id: req.params.id }, (err, data) => {
+    Arma.findOneAndRemove({ _id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
 
 
 exports.updateArma = (req, res) =>
-    Cliente.findOneAndUpdate({ _id: req.params.id }, { $set: { nombre: req.body.nombre, precio: req.body.precio } },
+    Arma.findOneAndUpdate({ _id: req.params.id }, { $set: { nombre: req.body.nombre, precio: req.body.precio } },
         (err, data) => {
             if (err) res.json({ error: err });
             else res.json(data);
@@ -34,7 +34,7 @@ exports.updateArma = (req, res) =>
 
 
 exports.createArma = (req, res) =>
-    new Cliente({ nombre: req.body.nombre, precio: req.body.precio })
+    new Arma({ nombre: req.body.nombre, precio: req.body.precio })
     .save((err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
@@ -45,21 +45,21 @@ exports.createArma = (req, res) =>
 // ------ TIRADORES
 
 exports.readTiradores = (req, res) =>
-    Articulo.find({}, (err, data) => {
+    Tirador.find({}, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
 
 
 exports.readTirador = (req, res) =>
-    Articulo.findOne({ _id: req.params.id }, (err, data) => {
+    Tirador.findOne({ _id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
 
 
 exports.deleteTirador = (req, res) =>
-    Articulo.findOneAndRemove({ _id: req.params.id }, (err, data) => {
+    Tirador.findOneAndRemove({ _id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);
     });
@@ -67,7 +67,7 @@ exports.deleteTirador = (req, res) =>
 
 
 exports.updateTirador = (req, res) =>
-    Articulo.findOneAndUpdate({ _id: req.params.id }, { $set: { nombre: req.body.nombre, apellidos: req.body.apellidos } },
+    Tirador.findOneAndUpdate({ _id: req.params.id }, { $set: { nombre: req.body.nombre, apellidos: req.body.apellidos } },
         (err, data) => {
             if (err) res.json({ error: err });
             else res.json(data);
@@ -76,7 +76,7 @@ exports.updateTirador = (req, res) =>
 
 
 exports.createTirador = (req, res) =>
-    new Articulo({ nombre: req.body.nombre, apellidos: req.body.apellidos })
+    new Tirador({ nombre: req.body.nombre, apellidos: req.body.apellidos })
     .save((err, data) => {
         if (err) res.json({ error: err });
         else res.json(data);

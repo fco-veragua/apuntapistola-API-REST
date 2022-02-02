@@ -5,7 +5,7 @@ const Arma = mongoose.model('Arma',
 );
 
 const Tirador = mongoose.model('Tirador',
-    new mongoose.Schema({ nombre: String, apellidos: String })
+    new mongoose.Schema({ nombre: String, apellidos: String }, { collection: 'tiradores' }) // mongoose intenta establecer las colecciones con nombres descriptivos en plural 
 );
 
 module.exports = {

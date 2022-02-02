@@ -1,0 +1,21 @@
+.backc-nav {
+    background-color:#7A8765;
+}
+
+body {
+    padding-bottom: 3rem;
+    background-image: url('../img/camouflagePattern.jpeg');
+    background-repeat: repeat;
+}
+
+.color-container {
+    background-color: #E6E0D0;
+}
+
+.armas {
+    border: 1px solid black;
+}
+
+.card {
+    background-color: #B6AC92;
+}
